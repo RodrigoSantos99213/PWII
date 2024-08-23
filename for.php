@@ -26,13 +26,24 @@
           <a class="nav-link" href="variavel.php">
             Variavel
           </a>
+
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="if.php">
+            If  
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="variavel.php">
+            Variavel
+          </a>
+
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="while.php">While</a></li>
+            <li><a class="dropdown-item" href="#while.php">While</a></li>
             <li><a class="dropdown-item" href="for.php">For</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="foreach.php">Foreach</a></li>
@@ -60,31 +71,33 @@
 
 
 <div class="container">
-    <h1>Variaveis em PHP</h1>
-    <p> $numero =10; //Aqui é uma variavel inteira </p>
-    <p> $string ="camisa 10"; </p>
-    <p> $string1 ="camisa 10" .$numero; </p>
-    <p> $string2 ="camisa 10 $numero"; </p>
-    <p> $Valor Decimal ="10.50"; </p>
-    <p> $Ativo ="true"; </p>
-    <p> /* Aqui é um bloco de comentario */ </p>
-    <?php // Tudo que está entre as tags php não aparece na tela ?>
+  <h1>Laço de Repetição For</h1>
+  <p> Esse laço de repetição é mais utilizado e mais prático </p>
+  <pre>
+      for($i = 0; $i < 10; $i++){
+          echo "$i";
+      }
+ </pre>
+      <?php
+            for($i = 0; $i <= 3; $i++){
+                echo "<b>Oiii</b><br>";
+            }
+        
+            echo "</hr>";
+            for($i = 0; $i <= 3; $i++)
+            {    
+                ?>
+                    <b>Oiii</b><br>
+                    <?php
+            }
+        ?>
 
-    <?php // a não ser que usemos a função echo string ?>
-        <?php
-            echo"Hello Word";
-            echo "<br>";
-            $numero = 10;
-            $nome = "Rodrigo";
-            $frase1 = "<p> $nome camisa $numero frase com paragrafo </p>";
-            $frase2 = "$nome camisa" .$numero; // cocatenação das antigas
-            echo $frase1;
-            echo "$frase2 É o que tem dentro da variavel";
 
 
-            ?>
+
 </div>
 
-    <script src= "bootstrap.bundle.min.js"></script>
+
+  <script src= "bootstrap.bundle.min.js"></script>
 </body>
 </html>
