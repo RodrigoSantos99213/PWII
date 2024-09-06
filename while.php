@@ -55,8 +55,8 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link">
-                Disabled
+            <a class="nav-link" href="array.php">
+                Array
             </a>
         </li>
       </ul>

@@ -44,8 +44,8 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">
-            Disabled
+          <a class="nav-link" href="array.ph">
+            Array
           </a>
         </li>
       </ul>
