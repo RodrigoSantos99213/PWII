@@ -1,3 +1,5 @@
+<?php include "cabecalho.php"; ?>
+
 <h1> Funções Nativas</h1>
 <p>Funções nativas são fuções que o próprio php
     nos fornece, como  por exemplo:
@@ -44,3 +46,5 @@ Função getdate()
 ?>
 
 <h1> Funções Personalizadas</h1>
+
+<?php include "rodape.php"; ?>
