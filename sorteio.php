@@ -5,26 +5,27 @@
 <?php
 $sorteio = array(
 
-        "nome" => "JONAS SILVA JATOBA",      
-        "nome" => "MARCOS VINÍCIUS SANCHES CARDOSO",    
-        "nome" => "MARIANA DOS SANTOS",      
-        "nome" => "MATHEUS MARQUEZIM GENEBRA",       
-        "nome" => "RAFAEL TSUTAI MASSAKI",       
-        "nome" => "REBÉCA RODRIGUES DE OLIVEIRA",        
-        "nome" => "RODOLFO LEONARDO ROMO",       
-        "nome" => "RODRIGO MIRANDA DOS SANTOS",      
-        "nome" => "SARAH VITÓRIA PEDROSO DA SILVA",      
-        "nome" => "TAYNA ADRIANA DA SILVA",      
-        "nome" => "VANESSA ALVARES BERNARDO",        
-        "nome" => "VINICIUS GABRIEL GONÇALVES DOS SANTOS",       
-        "nome" => "VITOR TAKAYUKI HIROTOMI",     
-        "nome" => "WYLLIAM DOS SANTOS FLORENTINO",
+         "JONAS SILVA JATOBA",      
+         "MARCOS VINÍCIUS SANCHES CARDOSO",    
+         "MARIANA DOS SANTOS",      
+         "MATHEUS MARQUEZIM GENEBRA",       
+         "RAFAEL TSUTAI MASSAKI",       
+         "REBÉCA RODRIGUES DE OLIVEIRA",        
+         "RODOLFO LEONARDO ROMO",       
+         "RODRIGO MIRANDA DOS SANTOS",      
+         "SARAH VITÓRIA PEDROSO DA SILVA",      
+         "TAYNA ADRIANA DA SILVA",      
+         "VANESSA ALVARES BERNARDO",        
+         "VINICIUS GABRIEL GONÇALVES DOS SANTOS",       
+         "VITOR TAKAYUKI HIROTOMI",     
+         "WYLLIAM DOS SANTOS FLORENTINO",
 );
 
-echo rand(0,10), "\n";
-$numero = rand(0,10);
+$numero=0;
+$numero= rand(0,13);
 
-echo $sorteio["nome"];
+
+echo $sorteio[$numero];
 
 ?>
 
