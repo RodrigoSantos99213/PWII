@@ -43,7 +43,8 @@
                 echo "<div class='alert alert-sucess'>
                         Salvo no banco com sucesso
                         </div> ";
-            }
+            }else
+                echo "<
             //Executa a lógica do programa
             //Salvar no banco
             echo "<h1>Salvo no Banco com sucesso!</h1>";
