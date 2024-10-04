@@ -100,6 +100,14 @@
           <a class="nav-link" href="https://www.tiktok.com/">
             Tiktok
           </a>
+          <li class="nav-item">
+          <a class="nav-link" href="produto.php">
+            Produto
+          </a>
+          <li class="nav-item">
+          <a class="nav-link" href="novo_produto.php">
+            Novo Produto
+          </a>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
