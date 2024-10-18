@@ -101,8 +101,8 @@
             Tiktok
           </a>
           <li class="nav-item">
-          <a class="nav-link" href="produto.php">
-            Produto
+          <a class="nav-link" href="produtos.php">
+            Produtos
           </a>
           <li class="nav-item">
           <a class="nav-link" href="novo_produto.php">
