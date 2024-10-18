@@ -103,7 +103,7 @@ else
                                     echo "</tr>";
                                 }
                             } else {
-                                echo "Nenhum Produto "
+                                echo "<tr><td colspan='3'>Nenhum registro encontrado</td></tr>";
                                 $conexao->close();
                             }
                             ?>
