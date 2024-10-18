@@ -8,7 +8,7 @@ if( !empty($_GET['Id']) && isset( $_GET['Id'] ) )
     $resultado = $conexao->query($sql);
     if($resultado)
     {
-        header('location: produtos.php');
+        header("location: produto.php");
     }
     else
     {
@@ -18,7 +18,7 @@ if( !empty($_GET['Id']) && isset( $_GET['Id'] ) )
 }
 else
 {
-    header('location: produtos.php');
+    header("location: produto.php");
 }
 
 
