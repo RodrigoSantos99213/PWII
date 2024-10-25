@@ -83,23 +83,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.facebook.com/">
-            Facebook
+          <a class="nav-link" href="categorias.php">
+            Categorias
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.instagram.com/">
-            Instagram
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/">
-             Twitter
-          </a>
-          <li class="nav-item">
-          <a class="nav-link" href="https://www.tiktok.com/">
-            Tiktok
-          </a>
           <li class="nav-item">
           <a class="nav-link" href="produtos.php">
             Produtos

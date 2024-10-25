@@ -39,6 +39,25 @@ $script = "
     ('Secador de Cabelo - 2200W', 199.90, '1234567890141', 1),
     ('Jogo de Lençóis - 150 Fios', 159.90, '1234567890142', 1);
 
+     CREATE TABLE CATEGORIAS (
+     ID INT PRIMARY KEY AUTO_INCREMENT,
+     NOME VARCHAR(80) NOT NULL,
+     DESCRICAO INT,
+     CATEGORIASID INT NOT NULL,
+     FOREIGN KEY (CATEGORIASID) REFERENCES produtos (ID)
+
+     );
+
+     INSERT INTO CATEGORIAS (NOME) VALUES ('Alimentos');
+     INSERT INTO CATEGORIAS (NOME) VALUES ('Vestuário e Acessórios');
+     INSERT INTO CATEGORIAS (NOME) VALUES ('Eletrônicos');
+     INSERT INTO CATEGORIAS (NOME) VALUES ('Papeleria');
+     INSERT INTO CATEGORIAS (NOME) VALUES ('Eletrodomésticos');
+     INSERT INTO CATEGORIAS (NOME) VALUES ('Utensílios de Cozinha');
+     INSERT INTO CATEGORIAS (NOME) VALUES ('Beleza e Cuidados Pessoais');
+     INSERT INTO CATEGORIAS (NOME) VALUES ('Têxtil');
+     INSERT INTO CATEGORIAS (NOME) VALUES ('Segurança e Conforto');
+
     
 ";
 

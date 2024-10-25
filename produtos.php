@@ -44,7 +44,7 @@ else
     if (isset($_GET["erro"]) && !empty($_POST["erro"]) )
     {
         echo "<div class= 'alert alert-danger'>";
-        echo "$_GET["erro"]";
+        echo $_GET["erro"];
         echo "</div>";
     }
 ?>
