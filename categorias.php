@@ -1,24 +1,25 @@
 <?php include "cabecalho.php"; ?>
 
-<?php
-
+<?php 
 if( isset($_GET["pesquisa"]) )
 {
     $pesquisa = $_GET["pesquisa"];
     if( empty($pesquisa) )
     {
+       //Se a variavel estiver vazia executa aqui 
        include "conexao.php";
-       $sql = "Select Id, Nome, Descricao, order by Id desc";
+       $sql = "Select Id, Nome from Categorias order by Id desc";
        $resultado = $conexao->query($sql);
        
        $conexao->close();
     }
     else
     {
+        //Aqui vai a lógica da pesquisa
         include "conexao.php";
-        $sql = "Select Id, Nome, Descricao 
+        $sql = "Select Id, Nome 
                 from Categorias  
-                where Nome like '%$pesquisa%' || Descricao = '$pesquisa'
+                where Nome like '%$pesquisa%' 
                 order by Id desc";
         $resultado = $conexao->query($sql);
         
@@ -28,11 +29,7 @@ if( isset($_GET["pesquisa"]) )
 else
 {
     $pesquisa = "";
-    include "conexao.php";
-    $sql = "Select Id, Nome, Descricao, ,from Categoria order by Id desc";
-    $resultado = $conexao->query($sql);
-   
-    $conexao->close();
+    
     
 }
 
@@ -40,9 +37,9 @@ else
 ?>
 <br>
 <?php
-    if (isset($_GET["erro"]) && !empty($_POST["erro"]) )
+    if(isset($_GET["erro"]) && !empty($_GET["erro"]) )
     {
-        echo "<div class= 'alert alert-danger'>";
+        echo "<div class='alert alert-danger'>";
         echo $_GET["erro"];
         echo "</div>";
     }
@@ -52,17 +49,17 @@ else
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                Lista de Produtos
+                Categoria dos Produtos
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-2">
                         <a href="novo_produto.php" class="btn btn-success" >
-                            Novo Produto
+                            Nova Categoria
                         </a>
                     </div>
                     <div class="col-8">
-                        <form action="produtos.php" method="get">
+                        <form action="categorias.php" method="get">
                             <div class="input-group mb-3">
                                 <input type="text" 
                                         name="pesquisa" 
@@ -88,11 +85,15 @@ else
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Nome</th>
-                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php 
+                            include "conexao.php";
+                            $sql = "Select Id, Nome from Categorias order by Id desc";
+                            //$resultado = $conexao->query($sql);
+                            
+                            $conexao->close();
                             if ($resultado->num_rows > 0) {
                                 while($row = $resultado->fetch_assoc()) {
                                     echo "<tr>";
@@ -116,6 +117,5 @@ else
         </div>
     </div>
 </div>
-
 
 <?php include "rodape.php"; ?>
