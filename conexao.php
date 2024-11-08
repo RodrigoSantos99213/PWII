@@ -5,52 +5,67 @@ $senha = "";
 $banco = "PW_BD"; 
 
 $script = "
-    CREATE DATABASE PW_BD;
+   CREATE DATABASE PW_BD;
     USE PW_BD;
-
-  	 CREATE TABLE CATEGORIAS (
-     ID INT PRIMARY KEY AUTO_INCREMENT,
-     NOME VARCHAR(80) NOT NULL
+    CREATE TABLE PRODUTOS
+    (
+        ID INT PRIMARY KEY AUTO_INCREMENT,
+        DESCRICAO VARCHAR (150) NOT NULL,
+        CODIGO_BARRAS VARCHAR (25) NOT NULL,
+        VALOR DECIMAL (10,2) NOT NULL,
+        IMAGEM VARCHAR (50),
+        ATIVO BIT NOT NULL
     );
-
-     INSERT INTO CATEGORIAS (NOME) VALUES ('ELETRÔNICOS');
-     INSERT INTO CATEGORIAS (NOME) VALUES ('VESTUÁRIOS'); 
-     INSERT INTO CATEGORIAS (NOME) VALUES ('ALIMENTOS'); 
-     INSERT INTO CATEGORIAS (NOME) VALUES ('UTILIDADES DOMÉSTICAS');
-
- 		CREATE TABLE PRODUTOS (
+    INSERT INTO PRODUTOS (DESCRICAO, CODIGO_BARRAS, VALOR, ATIVO) VALUES ( 'Amendoin Verde', '7898728640096', 5.50, 1);
+    INSERT INTO PRODUTOS (DESCRICAO, CODIGO_BARRAS, VALOR, ATIVO) VALUES ( 'Goiabinha Saborosa', '7897045700725', 1.50, 1);
+    INSERT INTO produtos (DESCRICAO, VALOR, CODIGO_BARRAS, ATIVO) VALUES
+    ('Camiseta Estampada - 100% Algodão', 49.90, '1234567890123', 1),
+    ('Tênis Esportivo - Conforto e Estilo', 299.90, '1234567890124', 1),
+    ('Smartphone XPro - 128GB, Câmera 48MP', 1999.00, '1234567890125', 1),
+    ('Caderno Universitário - 200 Folhas', 29.90, '1234567890126', 1),
+    ('Mochila de Couro - Elegante e Espaçosa', 249.90, '1234567890127', 1),
+    ('Fone de Ouvido Bluetooth - Cancelamento de Ruído', 149.90, '1234567890128', 1),
+    ('Relógio Digital - À Prova D\'água', 199.90, '1234567890129', 1),
+    ('Lavadora de Roupas - 10Kg', 1599.00, '1234567890130', 1),
+    ('Batedeira Elétrica - 5 Velocidades', 399.90, '1234567890131', 1),
+    ('Kit de Maquiagem - 12 Peças', 89.90, '1234567890132', 1),
+    ('Cafeteira Elétrica - 12 Xícaras', 299.90, '1234567890133', 1),
+    ('Conjunto de Panelas - Antiaderente', 349.90, '1234567890134', 1),
+    ('TV LED 50\ - Full HD', 2499.00, '1234567890135', 1),
+    ('Geladeira Inverse - 450 Litros', 3499.00, '1234567890136', 1),
+    ('Assento de Carro - Conforto e Segurança', 199.90, '1234567890137', 1),
+    ('Conjunto de Facas de Cozinha - 6 Peças', 129.90, '1234567890138', 1),
+    ('Roupão de Banho - Microfibra', 89.90, '1234567890139', 1),
+    ('Aspirador de Pó - Sem Fio', 599.90, '1234567890140', 1),
+    ('Secador de Cabelo - 2200W', 199.90, '1234567890141', 1),
+    ('Jogo de Lençóis - 150 Fios', 159.90, '1234567890142', 1);
+ 
+    CREATE TABLE CATEGORIAS
+    (
+        ID INT PRIMARY KEY AUTO_INCREMENT,
+        NOME VARCHAR(80) NOT NULL
+    );
+ 
+    CREATE TABLE USUARIOS (
+        ID INT PRIMARY KEY AUTO_INCREMENT,
+        LOGIN VARCHAR(50) NOT NULL,
+        SENHA VARCHAR(80) NOT NULL,
+        ATIVO BIT DEFAULT 1
+    );
+ 
+    CREATE TABLE PERMISSOES (
         ID INT PRIMARY KEY AUTO_INCREMENT,
         DESCRICAO VARCHAR(150) NOT NULL,
-        CODIGO_BARRAS VARCHAR(25) NOT NULL,
-        VALOR DECIMAL(10,2) NOT NULL,
-        IMAGEM VARCHAR(50),
-        ATIVO BIT NOT NULL,
-        CATEGORIAS_ID INT NOT NULL,
-        FOREIGN KEY (CATEGORIAS_ID) REFERENCES CATEGORIAS(ID)
+        ROLE VARCHAR(50) NOT NULL
     );
-    INSERT INTO PRODUTOS (DESCRICAO, CODIGO_BARRAS, VALOR, ATIVO, CATEGORIAS_ID) VALUES ( 'Amendoin Verde', '7898728640096', 5.50, 1, 3);
-    INSERT INTO PRODUTOS (DESCRICAO, CODIGO_BARRAS, VALOR, ATIVO, CATEGORIAS_ID) VALUES ( 'Goiabinha Saborosa', '7898045700725', 1.50, 1, 3);
-    INSERT INTO produtos (DESCRICAO, VALOR, CODIGO_BARRAS, ATIVO, CATEGORIAS_ID) VALUES
-    ('Camiseta Estampada - 100% Algodão', 49.90, '1234567890123', 1, 2),
-    ('Tênis Esportivo - Conforto e Estilo', 299.90, '1234567890124', 1, 2),
-    ('Smartphone XPro - 128GB, Câmera 48MP', 1999.00, '1234567890125', 1, 3),
-    ('Caderno Universitário - 200 Folhas', 29.90, '1234567890126', 1, 4),
-    ('Mochila de Couro - Elegante e Espaçosa', 249.90, '1234567890127', 1, 1),
-    ('Fone de Ouvido Bluetooth - Cancelamento de Ruído', 149.90, '1234567890128', 1, 1),
-    ('Relógio Digital - À Prova D\'água', 199.90, '1234567890129', 1, 1),
-    ('Lavadora de Roupas - 10Kg', 1599.00, '1234567890130', 1, 4),
-    ('Batedeira Elétrica - 5 Velocidades', 399.90, '1234567890131', 1, 4),
-    ('Kit de Maquiagem - 12 Peças', 89.90, '1234567890132', 1, 4),
-    ('Cafeteira Elétrica - 12 Xícaras', 299.90, '1234567890133', 1, 4),
-    ('Conjunto de Panelas - Antiaderente', 349.90, '1234567890134', 1, 4),
-    ('TV LED 50 - Full HD', 2499.00, '1234567890135', 1, 1),
-    ('Geladeira Inverse - 450 Litros', 3499.00, '1234567890136', 1, 1),
-    ('Assento de Carro - Conforto e Segurança', 199.90, '1234567890137', 1, 4),
-    ('Conjunto de Facas de Cozinha - 6 Peças', 129.90, '1234567890138', 1, 4),
-    ('Roupão de Banho - Microfibra', 89.90, '1234567890139', 1, 2),
-    ('Aspirador de Pó - Sem Fio', 599.90, '1234567890140', 1, 4),
-    ('Secador de Cabelo - 2200W', 199.90, '1234567890141', 1, 4),
-    ('Jogo de Lençóis - 150 Fios', 159.90, '1234567890142', 1, 4);
+ 
+    ALTER TABLE PRODUTOS
+    ADD COLUMN CATEGORIA_ID INT;
+ 
+    ALTER TABLE PRODUTOS
+    ADD CONSTRAINT FK_PRODUTOS_CATEGORIAS
+    FOREIGN KEY (CATEGORIA_ID) REFERENCES CATEGORIAS ( ID );
+
 ";
 
 $conexao = new mysqli($servidor, $usuario, $senha, $banco);
