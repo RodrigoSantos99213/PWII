@@ -8,7 +8,7 @@
         isset($_POST['Codigo_barras']) && !empty($_POST['Codigo_barras'])) {
  
             include 'conexao.php';
-            $sql = "UPDATE Produtos SET Descricao = '$_POST[Descricao]', Valor = $_POST[Valor], Codigo_barras = $_POST[Codigo_barras], Categoria_id = $_POST[categoria_ID];WHERE Id = $_POST[Id]"/
+            $sql = "UPDATE Produtos SET Descricao = '$_POST[Descricao]', Valor = $_POST[Valor], Codigo_barras = $_POST[Codigo_barras], categoria_Id = $_POST[categoria_Id] WHERE Id = $_POST[Id]";
             $resultado = $conexao->query($sql);
             if ($resultado) {
                 //lógica para mensagem de sucesso
@@ -20,7 +20,7 @@
  
     if (isset($_GET['Id']) && !empty($_GET['Id'])) {
         include 'conexao.php';
-        $sql = "SELECT Id, Descricao, Valor, Codigo_barras FROM produtos WHERE Id = $_GET[Id]";
+        $sql = "SELECT Id, Descricao, Valor, Codigo_barras, categoria_Id FROM produtos WHERE Id = $_GET[Id]";
         $resultado = $conexao->query($sql);
         if ($resultado) {
             if ($resultado->num_rows > 0) {
@@ -29,6 +29,7 @@
                     $descricao = $row["Descricao"];
                     $valor = $row["Valor"];
                     $codigo_barras = $row["Codigo_barras"];
+                    $categoria_Id = $row["categoria_Id"];
                 }
             }
             else {
@@ -54,7 +55,7 @@
  
    
  
-    <select name="categoria_id">
+    <select name="categoria_Id">
  
     <?php
     $sql_categorias = "Select Id, Nome from categorias";
@@ -63,13 +64,21 @@
     if ($resultado_agora->num_rows > 0) {
         while($row = $resultado_agora->fetch_assoc())
         {
- 
-        echo "<option value='$row[id]'> $row[Nome] </option>";
- 
-        }else{
-            echo "<option value='0'> Não tem categoria </option>";
+
+            if($categoria_Id == $row['Id'])
+            {
+                echo "<option selected value='$row[Id]'> $row[Nome] </option>";
+            }
+            else
+            {
+                echo "<option value='$row[Id]'> $row[Nome] </option>";
+            }
         }
 
+    }
+    else
+    {
+        echo "<option value='0'> Não tem categoria </option>";
     }
  
     ?>
@@ -82,7 +91,3 @@
 </form>
  
 <?php include "rodape.php"; ?>
-tem menu de contexto
-
-
-tem menu de contexto

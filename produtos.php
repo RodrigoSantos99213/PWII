@@ -109,8 +109,8 @@ else
                                     echo "<td><a href='editar_produto.php?Id=$row[Id]' class='btn btn-warning' >Editar</a>  ";
                                     echo "<a href='excluir_produto.php?Id=$row[Id]' class='btn btn-danger'>Excluir</a></td>";
                                     echo "</tr>";
-                                }
-                            } else {
+                               }
+                            } else { 
                                 echo "<tr><td colspan='3'>Nenhum registro encontrado</td></tr>";
                             }
                             ?>
