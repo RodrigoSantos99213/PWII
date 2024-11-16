@@ -105,8 +105,8 @@ else
                                     echo "<td>" . $row["Id"] . "</td>";
                                     echo "<td>" . $row["Login"] . "</td>";
                                     echo "<td>" . $row["Senha"] . "</td>";
-                                    echo "<td><a href='editar_categoria.php?Id=$row[Id]' class='btn btn-warning' >Editar</a>  ";
-                                    echo "<a href='excluir_categoria.php?Id=$row[Id]' class='btn btn-danger'>Excluir</a></td>";
+                                    //echo "<td><a href='editar_categoria.php?Id=$row[Id]' class='btn btn-warning' >Editar</a>  ";
+                                    //echo "<a href='excluir_categoria.php?Id=$row[Id]' class='btn btn-danger'>Excluir</a></td>";
                                     echo "</tr>";
                                 }
                             } else {

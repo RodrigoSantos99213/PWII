@@ -92,8 +92,8 @@
             Produtos
           </a>
           <li class="nav-item">
-          <a class="nav-link" href="novo_produto.php">
-            Novo Produto
+          <a class="nav-link" href="usuarios.php">
+            Usuarios
           </a>
       </ul>
       <form class="d-flex" role="search">

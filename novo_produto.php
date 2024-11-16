@@ -81,10 +81,10 @@
             <div class="card-body">
                 <form action="novo_produto.php" method="post">
                     <label>Nome</label>
-                    <input class="form-control" type="text" name="nome" value="<?php echo $login; ?>" />
+                    <input class="form-control" type="text" name="nome" value="<?php echo $nome; ?>" />
                     <br>
                     <label>Valor</label>
-                    <input class="form-control" type="number" name="valor" value="<?php echo $senha; ?>" />
+                    <input class="form-control" type="number" name="valor" value="<?php echo $valor; ?>" />
                     <br>
                     <label>Código de barras</label>
                     <input class="form-control" type="text" name="codigobarras" value="<?php echo $codigobarras; ?>" />

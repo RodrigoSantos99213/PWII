@@ -65,10 +65,10 @@
                     <input class="form-control" type="text" name="login" value="<?php echo $login; ?>" />
                     <br>
                     <label>Senha</label>
-                    <input class="form-control" type="number" name="senha" value="<?php echo $senha; ?>" />
+                    <input class="form-control" type="text" name="senha" value="<?php echo $senha; ?>" />
                     <br>
                     <button type='submit' class='btn btn-success'>
-                        Enviar os dados
+                        Cadastrar
                     </button>
                 </form>
             </div>
