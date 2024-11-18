@@ -60,7 +60,7 @@
                 Cadastro de Novos Usuarios
             </div>
             <div class="card-body">
-                <form action="novo_usuario.php" method="post">
+                <form action="novos_usuarios.php" method="post">
                     <label>Login</label>
                     <input class="form-control" type="text" name="login" value="<?php echo $login; ?>" />
                     <br>
