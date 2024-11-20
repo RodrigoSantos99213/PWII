@@ -12,7 +12,7 @@ if( isset($_GET["pesquisa"]) )
        U.Senha, U.Permissoes_Id,
        P.Descricao  
        from Usuarios U left join Permissoes P
-       ON ( U.Permissoes_Id = P.Id )
+       ON (U.Permissoes_Id = P.Id)
        order by U.Id desc";
        $resultado = $conexao->query($sql);
        
@@ -25,7 +25,7 @@ if( isset($_GET["pesquisa"]) )
         $sql = "Select U.Id, U.Login, U.Senha, U.Permissoes_Id,
                 P.Descricao
                 from Usuarios U left join Permissoes P
-                ON ( U.Permissoes_Id = P.Id) 
+                ON (U.Permissoes_Id = P.Id) 
                 where Descricao like '%$pesquisa%'
                 order by U.Id desc";
         $resultado = $conexao->query($sql);
@@ -40,7 +40,7 @@ else
     $sql = "Select U.Id, U.Login, U.Senha, U.Permissoes_Id,
             P.Descricao  
             from Usuarios U left join Permissoes P
-            ON ( U.Permissoes_Id = P.Id )
+            ON (U.Permissoes_Id = P.Id)
             order by P.Id desc";
     $resultado = $conexao->query($sql);
    
