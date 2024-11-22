@@ -107,10 +107,17 @@ else
                                     echo "<td>" . $row["Senha"] . "</td>";
                                     echo "<td><a href='editar_usuarios.php?Id=$row[Id]' class='btn btn-warning' >Editar</a>  ";
                                     echo "<a href='excluir_usuarios.php?Id=$row[Id]' class='btn btn-danger'>Excluir</a></td>";
+                                    if($row["Ativo"])
+                                    {
+                                        echo "<a href='desativar_usuario.php?Id=$row[Id]' class='btn btn-danger'>Desativar</a>  ";   
+                                    }else{
+                                        echo "<a href='ativar_usuario.php?Id=$row[Id]' class='btn btn-success'>Ativar</a>  ";
+                                    }
+                                    echo "<a href='permissoes_usuario.php?id_usuario=$row[Id]' class='btn btn-primary'>Permissões</a></td>";
                                     echo "</tr>";
-                               }
-                            } else { 
-                                echo "<tr><td colspan='3'>Nenhum registro encontrado</td></tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='4'>Nenhum registro encontrado</td></tr>";
                             }
                             ?>
                                                     
