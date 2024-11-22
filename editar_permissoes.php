@@ -50,38 +50,10 @@
  
    
  
-    <select name="permissoes_Id">
+   
+   
  
-    <?php
-    $sql_permissoes = "Select Id, Descricao from permissoes";
-    $resultado_agora = $conexao->query($sql_permissoes);
- 
-    if ($resultado_agora->num_rows > 0) {
-        while($row = $resultado_agora->fetch_assoc())
-        {
 
-            if($permissoes_Id == $row['Id'])
-            {
-                echo "<option selected value='$row[Id]'> $row[Descricao] </option>";
-            }
-            else
-            {
-                echo "<option value='$row[Id]'> $row[Descricao] </option>";
-            }
-        }
-
-    }
-    else
-    {
-        echo "<option value='0'> Não tem permissoes </option>";
-    }
- 
-    ?>
-       
-        
-</select>    
- 
-<br>
 </form>
  
 <?php include "rodape.php"; ?>

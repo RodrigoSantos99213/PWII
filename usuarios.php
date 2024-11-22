@@ -8,12 +8,9 @@ if( isset($_GET["pesquisa"]) )
     {
        //Se a variavel estiver vazia executa aqui 
        include "conexao.php";
-       $sql = "Select U.Id, U.Login,
-       U.Senha, U.Permissoes_Id,
-       P.Descricao  
-       from Usuarios U left join Permissoes P
-       ON (U.Permissoes_Id = P.Id)
-       order by U.Id desc";
+       $sql = "Select U.Id, Login, Senha
+       from Usuarios 
+       order by Id desc";
        $resultado = $conexao->query($sql);
        
        $conexao->close();
@@ -22,12 +19,10 @@ if( isset($_GET["pesquisa"]) )
     {
         //Aqui vai a lógica da pesquisa
         include "conexao.php";
-        $sql = "Select U.Id, U.Login, U.Senha, U.Permissoes_Id,
-                P.Descricao
-                from Usuarios U left join Permissoes P
-                ON (U.Permissoes_Id = P.Id) 
+        $sql = "Select Id, Login, Senha
+                from Usuarios  
                 where Descricao like '%$pesquisa%'
-                order by U.Id desc";
+                order by Id desc";
         $resultado = $conexao->query($sql);
         
         $conexao->close();
@@ -37,11 +32,9 @@ else
 {
     $pesquisa = "";
     include "conexao.php";
-    $sql = "Select U.Id, U.Login, U.Senha, U.Permissoes_Id,
-            P.Descricao  
-            from Usuarios U left join Permissoes P
-            ON (U.Permissoes_Id = P.Id)
-            order by P.Id desc";
+    $sql = "Select Id, Login, Senha 
+            from Usuarios 
+            order by Id desc";
     $resultado = $conexao->query($sql);
    
     $conexao->close();

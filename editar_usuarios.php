@@ -8,7 +8,7 @@
         ) {
  
             include 'conexao.php';
-            $sql = "UPDATE Usuarios SET Login = '$_POST[Login]', Senha = $_POST[Senha], Permissoes_Id = $_POST[Permissoes_Id] WHERE Id = $_POST[Id]";
+            $sql = "UPDATE Usuarios SET Login = '$_POST[Login]', Senha = $_POST[Senha] WHERE Id = $_POST[Id]";
             $resultado = $conexao->query($sql);
             if ($resultado) {
                 //lógica para mensagem de sucesso
@@ -20,7 +20,7 @@
  
     if (isset($_GET['Id']) && !empty($_GET['Id'])) {
         include 'conexao.php';
-        $sql = "SELECT Id, Login, Senha, Permissoes_Id FROM Usuarios WHERE Id = $_GET[Id]";
+        $sql = "SELECT Id, Login, Senha FROM Usuarios WHERE Id = $_GET[Id]";
         $resultado = $conexao->query($sql);
         if ($resultado) {
             if ($resultado->num_rows > 0) {
@@ -49,39 +49,9 @@
     <input name="Senha" value="<?php echo $senha ?>"/>
     
     <button type="submit">Salvar alterações</button>
+    
  
-   
- 
-    <select name="Permissoes_Id">
- 
-    <?php
-    $sql_categorias = "Select Id, Descricao from Permissoes";
-    $resultado_agora = $conexao->query($sql_categorias);
- 
-    if ($resultado_agora->num_rows > 0) {
-        while($row = $resultado_agora->fetch_assoc())
-        {
-
-            if($categoria_Id == $row['Id'])
-            {
-                echo "<option selected value='$row[Id]'> $row[Descricao] </option>";
-            }
-            else
-            {
-                echo "<option value='$row[Id]'> $row[Descricao] </option>";
-            }
-        }
-
-    }
-    else
-    {
-        echo "<option value='0'> Não tem permissoes </option>";
-    }
- 
-    ?>
-       
-        
-</select>    
+    
  
 <br>
 </form>
