@@ -36,7 +36,7 @@ $conexao->close();
             <div class="card-body">
                 <div class="row">
                     <div class="col-2">
-                        <a href="novo_usuario.php" class="btn btn-success" >
+                        <a href="novos_usuarios.php" class="btn btn-success" >
                             Novo Usuário
                         </a>
                     </div>
